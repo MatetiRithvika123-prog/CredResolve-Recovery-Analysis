@@ -1,0 +1,4 @@
+window_days,distinct_successful_payments_matched,payments_matching_multiple_target_events,pct_payments_with_multiple_targets,payments_matching_multiple_campaigns,pct_payments_with_multiple_campaigns
+7,809,17,2.1,17,2.1
+14,1555,79,5.08,79,5.08
+30,3012,290,9.63,285,9.46

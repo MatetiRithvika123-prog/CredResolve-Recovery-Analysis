@@ -1,0 +1,83 @@
+PASS | 01_payment_quality_checks.sql | statement 1
+columns=['raw_rows', 'unique_payment_ids', 'excess_rows_by_payment_id']; sample=[(25500, 25000, 500)]
+
+PASS | 01_payment_quality_checks.sql | statement 2
+columns=['payment_id', 'records_in_group', 'distinct_accounts', 'distinct_borrowers', 'distinct_statuses', 'distinct_amounts']; sample=[('PAYMENT0000056', 2, 1, 1, 1, 1), ('PAYMENT0000076', 2, 1, 1, 1, 1), ('PAYMENT0000108', 2, 1, 1, 1, 1), ('PAYMENT0000149', 2, 1, 1, 1, 1), ('PAYMENT0000199', 2, 1, 1, 1, 1)]
+
+PASS | 01_payment_quality_checks.sql | statement 3
+columns=['total_records', 'missing_reference_records', 'missing_reference_pct']; sample=[(25000, 368, Decimal('1.47'))]
+
+PASS | 01_payment_quality_checks.sql | statement 4
+columns=['candidate_rows', 'borrower_mismatch_rows', 'borrower_mismatch_pct']; sample=[(25000, 24617, Decimal('98.47'))]
+
+PASS | 01_payment_quality_checks.sql | statement 5
+columns=['payment_status', 'payment_records', 'unique_payment_ids']; sample=[('SUCCESS', 17534, 17534), ('FAILED', 3677, 3677), ('PENDING', 2535, 2535), ('REVERSED', 1254, 1254)]
+
+PASS | 01_payment_quality_checks.sql | statement 6
+columns=['month', 'payment_records', 'successful_payment_count', 'payment_success_share_pct', 'gross_successful_amount', 'gross_amount_mom_change_pct', 'successful_count_mom_change_pct']; sample=[(datetime.date(2026, 1, 1), 3528, 2464, Decimal('69.84'), Decimal('187229127.59'), None, None), (datetime.date(2026, 2, 1), 3171, 2268, Decimal('71.52'), Decimal('170142453.76'), Decimal('-9.13'), Decimal('-7.95')), (datetime.date(2026, 3, 1), 3577, 2524, Decimal('70.56'), Decimal('188912374.02'), Decimal('11.03'), Decimal('11.29')), (datetime.date(2026, 4, 1), 3470, 2406, Decimal('69.34'), Decimal('175138043.41'), Decimal('-7.29'), Decimal('-4.68')), (datetime.date(2026, 5, 1), 3491, 2449, Decimal('70.15'), Decimal('184250278.50'), Decimal('5.20'), Decimal('1.79'))]
+
+PASS | 01_payment_quality_checks.sql | statement 7
+columns=['payment_reference', 'records', 'success_records', 'reversed_records', 'distinct_accounts']; sample=[('TXN0000002005', 4, 1, 1, 4), ('TXN0000006936', 4, 1, 1, 4), ('TXN0000025345', 4, 3, 1, 4), ('TXN0000027954', 4, 3, 1, 4), ('TXN0000037460', 4, 2, 1, 4)]
+
+PASS | 02_entity_integrity_checks.sql | statement 1
+columns=['account_rows', 'unique_account_ids', 'missing_borrower_ids']; sample=[(30000, 30000, 455)]
+
+PASS | 02_entity_integrity_checks.sql | statement 2
+columns=['total_accounts', 'outstanding_above_principal', 'percentage_of_accounts']; sample=[(30000, 13029, Decimal('43.43'))]
+
+PASS | 02_entity_integrity_checks.sql | statement 3
+columns=['borrower_id', 'profile_rows', 'distinct_names', 'distinct_phones', 'distinct_emails', 'distinct_cities', 'distinct_states']; sample=[('BRW0008879', 11, 7, 11, 10, 8, 7), ('BRW0001237', 10, 9, 10, 10, 7, 6), ('BRW0002520', 10, 7, 10, 10, 5, 5), ('BRW0005385', 10, 7, 10, 10, 5, 4), ('BRW0006302', 10, 7, 10, 10, 7, 6)]
+
+PASS | 02_entity_integrity_checks.sql | statement 4
+columns=['account_id', 'payment_records']; sample=[]
+
+PASS | 02_entity_integrity_checks.sql | statement 5
+columns=['payment_rows', 'rows_with_missing_side_of_mapping', 'borrower_mismatch_rows']; sample=[(25000, 382, 24617)]
+
+PASS | 02_entity_integrity_checks.sql | statement 6
+columns=['history_rows', 'rows_with_missing_side_of_mapping', 'borrower_mismatch_rows']; sample=[(60000, 962, 59035)]
+
+PASS | 02_entity_integrity_checks.sql | statement 7
+columns=['payment_rows', 'rows_with_known_account', 'rows_with_unknown_account']; sample=[(25000, 25000, 0)]
+
+PASS | 03_campaign_targeting_analysis.sql | statement 1
+columns=['target_month', 'status', 'targeting_events', 'distinct_accounts', 'distinct_campaigns']; sample=[(datetime.date(2026, 1, 1), 'CONTACTED', 1562, 1528, 120), (datetime.date(2026, 1, 1), 'EXPIRED', 1615, 1578, 120), (datetime.date(2026, 1, 1), 'QUEUED', 1553, 1512, 120), (datetime.date(2026, 1, 1), 'SKIPPED', 1639, 1587, 120), (datetime.date(2026, 2, 1), 'CONTACTED', 1409, 1376, 120)]
+
+PASS | 03_campaign_targeting_analysis.sql | statement 2
+columns=['configured_channel', 'campaign_count', 'targeting_events', 'distinct_targeted_accounts']; sample=[('WHATSAPP', 31, 11423, 9532), ('SMS', 28, 10553, 8884), ('MIXED', 23, 8748, 7578), ('VOICE', 20, 7495, 6681), ('FIELD', 18, 6781, 6058)]
+
+PASS | 03_campaign_targeting_analysis.sql | statement 3
+columns=['targeting_events', 'events_followed_by_success', 'event_to_success_association_pct']; sample=[(45000, 3202, Decimal('7.12'))]
+
+PASS | 03_campaign_targeting_analysis.sql | statement 4
+columns=['configured_channel', 'targeting_events', 'events_followed_by_success', 'event_to_success_association_pct']; sample=[('FIELD', 6781, 498, Decimal('7.34')), ('VOICE', 7495, 547, Decimal('7.30')), ('MIXED', 8748, 636, Decimal('7.27')), ('SMS', 10553, 732, Decimal('6.94')), ('WHATSAPP', 11423, 789, Decimal('6.91'))]
+
+PASS | 03_campaign_targeting_analysis.sql | statement 5
+columns=['payment_id', 'matching_campaigns']; sample=[('PAYMENT0009962', 4), ('PAYMENT0001629', 3), ('PAYMENT0003608', 3), ('PAYMENT0005626', 3), ('PAYMENT0006473', 3)]
+
+PASS | 03_campaign_targeting_analysis.sql | statement 6
+columns=['targeting_rows', 'missing_campaign_references']; sample=[(45000, 0)]
+
+PASS | 04_data_quality_monitoring.sql | statement 1
+columns=['dataset', 'row_count', 'distinct_primary_keys']; sample=[('payments_raw', 25500, 25000), ('accounts_golden_candidate', 30000, 30000), ('payments_golden_candidate', 25000, 25000)]
+
+PASS | 04_data_quality_monitoring.sql | statement 2
+columns=['payment_id', 'row_count']; sample=[]
+
+PASS | 04_data_quality_monitoring.sql | statement 3
+columns=['total_rows', 'missing_payment_ids', 'missing_account_ids', 'missing_event_timestamps', 'missing_payment_statuses', 'missing_amounts', 'missing_payment_references']; sample=[(25000, 0, 0, 0, 0, 0, 368)]
+
+PASS | 04_data_quality_monitoring.sql | statement 4
+columns=['month', 'payment_status', 'record_count', 'monthly_status_share_pct']; sample=[(datetime.date(2026, 1, 1), 'FAILED', 515, Decimal('14.60')), (datetime.date(2026, 1, 1), 'PENDING', 375, Decimal('10.63')), (datetime.date(2026, 1, 1), 'REVERSED', 174, Decimal('4.93')), (datetime.date(2026, 1, 1), 'SUCCESS', 2464, Decimal('69.84')), (datetime.date(2026, 2, 1), 'FAILED', 451, Decimal('14.22'))]
+
+PASS | 04_data_quality_monitoring.sql | statement 5
+columns=['total_rows', 'missing_amounts', 'non_positive_amounts']; sample=[(25000, 0, 0)]
+
+PASS | 04_data_quality_monitoring.sql | statement 6
+columns=['total_accounts', 'distinct_account_ids', 'missing_or_invalid_opened_at', 'missing_borrower_id_flagged', 'outstanding_above_principal_flagged']; sample=[(30000, 30000, 0, 455, 13029)]
+
+PASS | 04_data_quality_monitoring.sql | statement 7
+columns=['candidate_rows', 'distinct_borrower_ids', 'rows_flagged_for_profile_conflict', 'rows_flagged_for_missing_phone', 'rows_flagged_for_missing_email']; sample=[(30000, 11015, 27503, 604, 880)]
+
+PASS | 04_data_quality_monitoring.sql | statement 8
+row_count=-1

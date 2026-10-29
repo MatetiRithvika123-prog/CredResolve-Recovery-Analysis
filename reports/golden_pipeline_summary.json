@@ -1,0 +1,26 @@
+[
+  {
+    "dataset": "accounts",
+    "source_rows": 30000,
+    "candidate_rows": 30000,
+    "candidate_unique_primary_keys": 30000,
+    "candidate_duplicate_primary_key_rows": 0,
+    "output_file": "data\\golden\\accounts_golden_candidate.csv"
+  },
+  {
+    "dataset": "borrowers",
+    "source_rows": 30600,
+    "candidate_rows": 30000,
+    "candidate_unique_primary_keys": 11015,
+    "candidate_duplicate_primary_key_rows": 27503,
+    "output_file": "data\\golden\\borrowers_golden_candidate.csv"
+  },
+  {
+    "dataset": "payments",
+    "source_rows": 25500,
+    "candidate_rows": 25000,
+    "candidate_unique_primary_keys": 25000,
+    "candidate_duplicate_primary_key_rows": 0,
+    "output_file": "data\\golden\\payments_golden_candidate.csv"
+  }
+]

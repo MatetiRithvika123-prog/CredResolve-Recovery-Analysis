@@ -1,0 +1,5 @@
+file,statements,passed,failed,status
+01_payment_quality_checks.sql,7,7,0,PASS
+02_entity_integrity_checks.sql,7,7,0,PASS
+03_campaign_targeting_analysis.sql,6,6,0,PASS
+04_data_quality_monitoring.sql,8,8,0,PASS

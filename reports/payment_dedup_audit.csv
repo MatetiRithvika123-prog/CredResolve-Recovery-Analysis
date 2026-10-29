@@ -1,0 +1,3 @@
+stage,row_count,unique_payment_ids,missing_references
+raw,25500,25000,382
+dedup_candidate,25000,25000,368

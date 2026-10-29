@@ -1,0 +1,3 @@
+comparison,measure,february_pct,march_pct,change_percentage_points,ci_95_lower_pp,ci_95_upper_pp,p_value,significant_at_5pct
+February vs March,Payment-level success share,71.52,70.56,-0.96,-3.13,1.21,0.385,False
+February vs March,Account-level success share,72.19,72.04,-0.16,-2.36,2.05,0.8899,False

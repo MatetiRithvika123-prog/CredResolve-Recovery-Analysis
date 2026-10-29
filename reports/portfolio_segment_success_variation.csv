@@ -1,0 +1,15 @@
+segment_dimension,segment,average_success_share,minimum_success_share,maximum_success_share,number_of_months,success_share_range_pp
+dpd_band,over_90,69.6075,66.3,74.61,8,8.31
+dpd_band,61_90,69.59875,65.22,72.68,8,7.46
+dpd_band,0_or_less,70.56625,67.33,73.17,8,5.84
+dpd_band,1_30,69.89375,66.67,72.18,8,5.51
+dpd_band,31_60,70.13375,69.01,72.4,8,3.39
+loan_type,PERSONAL,68.92125,64.2,72.45,8,8.25
+loan_type,CREDIT_CARD,69.5075,65.57,72.4,8,6.83
+loan_type,CONSUMER,70.415,67.04,73.32,8,6.28
+loan_type,AUTO,70.07,66.94,73.02,8,6.08
+loan_type,BNPL,70.60875,69.07,71.58,8,2.51
+risk_segment,LOW,69.12625,62.55,71.51,8,8.96
+risk_segment,MEDIUM,70.3775,66.03,73.38,8,7.35
+risk_segment,HIGH,70.075,67.97,72.29,8,4.32
+risk_segment,NPA,69.95125,68.03,72.18,8,4.15

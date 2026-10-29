@@ -1,0 +1,6 @@
+issue,records_affected,severity,treatment,status
+Exact duplicate borrower rows,600,Medium,Eligible for removal from a candidate after audit; preserve raw source.,Measured
+Borrower IDs with conflicting profile fields,8518,Critical,Preserve source rows; do not arbitrarily select a profile.,Unresolved
+Borrower IDs with any profile variation,8518,High,Investigate profile history and identifier reuse before deduplication.,Unresolved
+Missing borrower phone numbers,614,Medium,Preserve missing values; do not invent contact details.,Flagged
+Missing borrower email addresses,895,Low,Preserve missing values.,Flagged

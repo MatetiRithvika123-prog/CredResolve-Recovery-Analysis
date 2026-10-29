@@ -1,0 +1,23 @@
+flowchart TD
+    A["Raw Layer<br/>Immutable source files"] --> B["Staging Layer<br/>Schema and type validation"]
+    B --> C["Clean Layer<br/>Deduplication and quality flags"]
+    C --> D["Golden Layer<br/>Documented trusted entities"]
+    D --> E["Feature Layer<br/>Cohorts, DPD bands, exposures"]
+    E --> F["Metrics Layer<br/>Versioned business definitions"]
+    F --> G["Dashboard and Decisions<br/>Trends, segments, alerts"]
+
+    B -. "Quarantine invalid records" .-> Q["Data Quality Quarantine"]
+    C -. "Record exceptions" .-> Q
+
+    H["Data Contracts and Data Dictionary"] --> B
+    H --> C
+    I["Lineage and Audit Logs"] --> B
+    I --> C
+    I --> D
+    I --> F
+
+    J["Monitoring and Reconciliation"] --> B
+    J --> C
+    J --> D
+    J --> F
+    J --> G

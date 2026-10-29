@@ -1,0 +1,9 @@
+dataset_or_issue,raw_rows_or_count,candidate_or_exception_rows,quantified_impact,treatment_or_interpretation,status
+Payments total rows,25500,25000,500,Excess rows removed from candidate by payment_id deduplication.,Measured
+Payment duplicate-ID excess rows,500,500,500,Excess rows saved for review; not counted as independent events.,Measured
+Payment borrower-ID mismatches,Not applicable,24617,24617,Flagged; borrower attribution remains unresolved.,Measured
+Payment unknown account IDs,Not applicable,0,0,"Zero means account IDs match, not that borrower attribution is correct.",Measured
+Payment missing references,Not applicable,368,368,Retained; missing reference alone does not prove invalidity.,Measured
+Payment invalid/unparseable timestamps,Not applicable,0,0,A valid parse does not prove the timezone is known.,Measured
+Account rows,30000,30000,0,Account IDs must be unique; investigate duplicates.,Measured
+Borrower rows after exact-row deduplication,30600,30000,600,Exact duplicates removed; conflicting profiles require review.,Measured

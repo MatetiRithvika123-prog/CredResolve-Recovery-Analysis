@@ -1,0 +1,12 @@
+check_name,observed_value,interpretation
+Payment row count,25500,"Baseline: 25,500 rows"
+Unique payment IDs,25000,Compare with total payment rows
+Duplicate payment ID groups,500,Investigate before deduplicating
+Missing payment references,382,Missing reference count
+Unknown payment account IDs,0,Expected zero if account links are valid
+Payment/account borrower mismatches,25499,Review before using borrower-level metrics
+Accounts with outstanding above principal,13029,Review business meaning and data quality
+Duplicate call ID groups,1350,Investigate duplicate/conflicting call records
+Duplicate call attempt IDs,0,Attempt IDs should be unique
+Targeting rows with unknown campaigns,0,Expected zero if campaign links are valid
+Account status history borrower mismatches,59997,Check entity identity and source consistency

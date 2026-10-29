@@ -1,0 +1,1 @@
+payment_id,account_id,borrower_id,event_at,payment_reference,amount,payment_status,payment_method,provider_id,event_at_parsed,account_borrower_id,account_id_valid,borrower_id_mismatch,payment_reference_missing,event_at_invalid,disposition,disposition_reason

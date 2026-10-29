@@ -1,0 +1,7 @@
+issue,severity,records_affected,detection,treatment,business_impact,status
+Duplicate payment IDs,High,500,Repeated payment_id groups in raw data,One record per payment_id in candidate,Duplicate events may inflate payment totals,Candidate treatment applied; validation pending
+Missing payment references,Medium,368,Null payment_reference in candidate,Preserve records and flag missing references,Limits payment event reconciliation,Unresolved
+Payment/account borrower mismatch,Critical,24617,Compare payment and account borrower IDs,Preserve both IDs; do not silently replace either,Borrower-level recovery attribution is unreliable,Flagged; unresolved
+Unresolved reversal linkage,Critical,1254,Compare SUCCESS and REVERSED payment references,Do not link reversals using reference alone,Verified net recovery cannot yet be calculated,Investigated; unresolved
+Unconfirmed payment timezone,High,25000,Payment event_at is timezone-naive,Parse timestamps without assuming a timezone,Daily and monthly attribution may be affected,Unresolved
+Unconfirmed amount currency,High,25000,No confirmed currency definition in the dictionary,Preserve source amounts without assigning a currency,Financial totals and ROI lack confirmed units,Unresolved

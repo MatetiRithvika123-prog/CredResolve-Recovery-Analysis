@@ -1,0 +1,4 @@
+window_days,target_events,target_events_followed_by_success,target_event_share_pct,distinct_accounts_with_success,distinct_successful_payment_ids
+7,45000,825,1.83,799,809
+14,45000,1614,3.59,1502,1555
+30,45000,3202,7.12,2806,3012

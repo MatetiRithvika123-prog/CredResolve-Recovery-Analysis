@@ -1,0 +1,16 @@
+month,account_cohort,payment_records,distinct_accounts,successful_payments,success_share_pct
+2026-01,First observed payment month,3528,3337,2464,69.84
+2026-02,First observed payment month,2822,2682,2030,71.93
+2026-02,Returning account,349,328,238,68.19
+2026-03,First observed payment month,2868,2705,2012,70.15
+2026-03,Returning account,709,653,512,72.21
+2026-04,First observed payment month,2458,2318,1724,70.14
+2026-04,Returning account,1012,949,682,67.39
+2026-05,First observed payment month,2195,2078,1546,70.43
+2026-05,Returning account,1296,1218,903,69.68
+2026-06,First observed payment month,1856,1752,1313,70.74
+2026-06,Returning account,1509,1426,1053,69.78
+2026-07,First observed payment month,1763,1682,1239,70.28
+2026-07,Returning account,1721,1616,1202,69.84
+2026-08,First observed payment month,387,380,259,66.93
+2026-08,Returning account,527,518,357,67.74

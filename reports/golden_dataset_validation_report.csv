@@ -1,0 +1,13 @@
+check,actual_value,expected_value,passed
+Accounts rows,30000,30000.0,True
+Unique account IDs,30000,30000.0,True
+Missing account borrower IDs,455,455.0,True
+Outstanding exceeds principal,13029,13029.0,True
+Borrower candidate rows,30000,30000.0,True
+Unique borrower IDs,11015,11015.0,True
+Payment candidate rows,25000,25000.0,True
+Unique payment IDs,25000,25000.0,True
+Missing payment references,368,368.0,True
+Payment borrower mismatches,24617,24617.0,True
+Invalid payment timestamps,0,0.0,True
+Borrower profile-conflict rows (informational),27503,,
